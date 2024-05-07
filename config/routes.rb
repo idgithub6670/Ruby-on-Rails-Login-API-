@@ -5,6 +5,8 @@ Rails.application.routes.draw do
         post 'sign_in', to: 'sessions#sign_in'
         delete 'sign_out', to: 'sessions#sign_out'
         get 'me', to: 'sessions#me'
+
+        resources :blogs
       end
     end
   end

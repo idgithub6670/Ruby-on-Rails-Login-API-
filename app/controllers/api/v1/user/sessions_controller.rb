@@ -1,4 +1,5 @@
 class Api::V1::User::SessionsController < Api::V1::User::AppController
+  skip_before_action :set_current_user_from_header, only: [:sign_in]
 
   def sign_in
     user = User.find_by_email(params[:user][:email])

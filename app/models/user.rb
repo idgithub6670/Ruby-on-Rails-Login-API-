@@ -40,6 +40,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :blogs
   before_create :generate_auth_token
 
   def generate_auth_token
